@@ -1,0 +1,35 @@
+[gd_scene load_steps=4 format=3 uid="uid://7q6udr0gwq5i"]
+
+[ext_resource type="Script" path="res://brick.gd" id="1_7cdaa"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_46pib"]
+size = Vector2(48, 10)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c7r17"]
+size = Vector2(50, 12)
+
+[node name="Brick" type="StaticBody2D"]
+script = ExtResource("1_7cdaa")
+
+[node name="BrickOuter" type="ColorRect" parent="."]
+offset_right = 48.0
+offset_bottom = 10.0
+
+[node name="BrickInner" type="ColorRect" parent="."]
+offset_left = 2.0
+offset_top = 2.0
+offset_right = 46.0
+offset_bottom = 8.0
+color = Color(1, 0, 0.878431, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(24, 5)
+shape = SubResource("RectangleShape2D_46pib")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(24, 5)
+shape = SubResource("RectangleShape2D_c7r17")
+
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

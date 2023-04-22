@@ -1,0 +1,29 @@
+[gd_scene load_steps=7 format=3 uid="uid://dr1mkb65o7ydh"]
+
+[ext_resource type="Script" path="res://Main.gd" id="1_ahv5u"]
+[ext_resource type="PackedScene" uid="uid://d3gtxor00jsk" path="res://player.tscn" id="3_8wfbw"]
+[ext_resource type="PackedScene" uid="uid://br1ycww1ramsn" path="res://ball.tscn" id="3_maexy"]
+[ext_resource type="PackedScene" uid="uid://cm1medjpaynpe" path="res://paddle.tscn" id="3_rctqa"]
+[ext_resource type="PackedScene" uid="uid://c706tf776ijpc" path="res://wall.tscn" id="4_c41m3"]
+[ext_resource type="PackedScene" uid="uid://7q6udr0gwq5i" path="res://brick.tscn" id="5_wuf2q"]
+
+[node name="Main" type="Node"]
+script = ExtResource("1_ahv5u")
+brick_scene = ExtResource("5_wuf2q")
+ball_scene = ExtResource("3_maexy")
+brick_rows = ["#085f63", "#49beb7", "#f78536", "#ff5959", "#f78536", "#497285", "#2b4450"]
+
+[node name="Player" parent="." instance=ExtResource("3_8wfbw")]
+
+[node name="Paddle" parent="." instance=ExtResource("3_rctqa")]
+
+[node name="Walls" type="Node" parent="."]
+
+[node name="WallLeft" parent="Walls" instance=ExtResource("4_c41m3")]
+
+[node name="WallRight" parent="Walls" instance=ExtResource("4_c41m3")]
+position = Vector2(485, 0)
+
+[node name="Ceiling" parent="Walls" instance=ExtResource("4_c41m3")]
+position = Vector2(485, -7)
+scale = Vector2(98, 0.01)
