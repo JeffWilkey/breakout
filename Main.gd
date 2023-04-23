@@ -15,10 +15,9 @@ var ball_start_pos
 func _ready():
 	new_game()
 	
-func _process(delta):
+func _process(_delta):
 	if (ball && ball.position.y > get_viewport().size.y):
 		ball.call("reset_ball", ball_start_pos)
-		$Player.call("lose_life")
 	
 func new_game():
 	# Set start positions for paddle and ball
@@ -26,7 +25,7 @@ func new_game():
 	
 	# Add ball to scene and set start position
 	ball = ball_scene.instantiate()
-	ball_start_pos = Vector2(get_viewport().size.x / 2 + 24, brick_rows.size() * 10 + 64)
+	ball_start_pos = Vector2(get_viewport().size.x / 2, 100)
 	ball.call("start", ball_start_pos)
 	add_child(ball)
 
@@ -35,14 +34,11 @@ func new_game():
 	
 func lay_bricks():
 	for n in brick_rows.size():
-		var col_position = Vector2.ZERO
 		for i in 10:
 			var brick = brick_scene.instantiate()
-			var brick_spawn_location = Vector2(i * brick.get_node("BrickOuter").size.x, n * brick.get_node("BrickOuter").size.y + 30)
-			
-			brick.position.x = brick_spawn_location.x
-			brick.position.y = brick_spawn_location.y
-			brick.call("update_color", brick_rows[n])
+			var brick_size = Vector2(48, 10)
+			var brick_spawn_location = Vector2(i * brick_size.x, n * brick_size.y)
+			brick.call("create", brick_spawn_location, brick_size, 2.0, brick_rows[n])
 			brick.visible = true
 			add_child(brick)
 

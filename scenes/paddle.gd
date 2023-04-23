@@ -8,7 +8,7 @@ var screen_size
 func _ready():
 	screen_size = get_viewport_rect().size
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	velocity = Vector2.ZERO
 	
 	if Input.is_action_pressed("move_left"):
