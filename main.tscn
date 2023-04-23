@@ -3,15 +3,14 @@
 [ext_resource type="Script" path="res://Main.gd" id="1_ahv5u"]
 [ext_resource type="PackedScene" uid="uid://dq5wkdh5n4lo2" path="res://scenes/brick.tscn" id="2_t53wk"]
 [ext_resource type="PackedScene" path="res://scenes/ball.tscn" id="3_q85ls"]
-[ext_resource type="PackedScene" path="res://scenes/paddle.tscn" id="4_qu8jk"]
+[ext_resource type="PackedScene" uid="uid://riql8xbb7yep" path="res://scenes/paddle.tscn" id="4_qu8jk"]
 [ext_resource type="PackedScene" uid="uid://df06n8ojjfjol" path="res://scenes/level_manager.tscn" id="5_5i2x2"]
 
 [node name="Main" type="Node"]
 script = ExtResource("1_ahv5u")
 brick_scene = ExtResource("2_t53wk")
 ball_scene = ExtResource("3_q85ls")
+paddle_scene = ExtResource("4_qu8jk")
 brick_rows = ["#085f63", "#49beb7", "#f78536", "#ff5959", "#f78536", "#497285", "#2b4450"]
-
-[node name="Paddle" parent="." instance=ExtResource("4_qu8jk")]
 
 [node name="LevelManager" parent="." instance=ExtResource("5_5i2x2")]

@@ -2,6 +2,7 @@ extends Node
 
 @export var brick_scene: PackedScene
 @export var ball_scene: PackedScene
+@export var paddle_scene: PackedScene
 @export var brick_rows = [
 	"#8ef6e4",
 	"#9896f1",
@@ -9,6 +10,7 @@ extends Node
 	"#edb1f1"
 ]
 
+var paddle
 var ball
 var ball_start_pos
 
@@ -20,9 +22,11 @@ func _process(_delta):
 		ball.call("reset_ball", ball_start_pos)
 	
 func new_game():
-	# Set start positions for paddle and ball
-	$Paddle.start(Vector2(get_paddle_start_x(), get_viewport().size.y - 64))
-	
+	# Add paddle to scene and set start position
+	paddle = paddle_scene.instantiate()
+	paddle.call("start", Vector2(get_paddle_start_x(), get_viewport().size.y - 64))
+	add_child(paddle)
+
 	# Add ball to scene and set start position
 	ball = ball_scene.instantiate()
 	ball_start_pos = Vector2(get_viewport().size.x / 2, 100)
@@ -43,4 +47,4 @@ func lay_bricks():
 			add_child(brick)
 
 func get_paddle_start_x():
-	return get_viewport().size.x / 2 - ($Paddle/ColorRect.size.x / 2)
+	return get_viewport().size.x / 2 - (paddle.get_node("ColorRect").size.x / 2)
