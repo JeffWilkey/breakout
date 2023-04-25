@@ -16,6 +16,8 @@
 - [ ] Game Manager
 	- [ ] Handle Placement of Paddle and Ball
 	- [ ] Handle points, manage power ups
+- [x] Ball
+	- [x] Add damage variable to ball
 - [x] Walls
 	- [x] Use one wall scene for all walls
 	- [x] Instantiate walls from level manager
@@ -27,7 +29,9 @@
 		- [x] Regular Bricks
 		- [ ] Glass Bricks
 		- [ ] Indestructable Bricks
-	- [x]  Instantiate bricks from level manager
+	- [x] Add health to bricks
+	- [x] Subtract health from bricks when colliding w/ ball based on ball `damage` property
+	- [x] Instantiate bricks from level manager
 - [ ] Accumulate ball speed as time passes for both paddle and ball
 - [ ] Add power-ups
 	- [ ] 2x Speed w/ Wider paddle

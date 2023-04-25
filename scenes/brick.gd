@@ -1,5 +1,7 @@
 extends StaticBody2D
 
+@export var health = 10
+
 func break_brick():
 	queue_free()
 
@@ -15,7 +17,10 @@ func create(pos = Vector2(0, 0), size = Vector2(64, 16), padding = 4.0, color = 
 	$BrickInner.position = Vector2(padding, padding)
 	$BrickOuter.color = Color.from_string(color, Color.RED).darkened(0.2)
 	$BrickInner.color = Color.from_string(color, Color.BLUE)
-	
+
 func _on_area_2d_body_exited(body):
+	# When Ball collides with Brick subtract health based on Ball's damage property
 	if body is Ball:
-		break_brick()
+		health -= body.get("damage")
+		if health <= 0:
+			break_brick()
