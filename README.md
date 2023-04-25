@@ -7,7 +7,6 @@
 	- Plan to add GameManager to handle placement of Paddle & Ball and probably some other stuff I haven't thought of yet
 	- Other individual scenes are intended to be used by the Managers
 
-	
 ## Todo
 - [x] Improve ball/paddle physics
 - [x] Organize filesystem
@@ -28,7 +27,7 @@
 		- [x] Regular Bricks
 		- [ ] Glass Bricks
 		- [ ] Indestructable Bricks
-	- [ ]  Instantiate bricks from level manager
+	- [x]  Instantiate bricks from level manager
 - [ ] Accumulate ball speed as time passes for both paddle and ball
 - [ ] Add power-ups
 	- [ ] 2x Speed w/ Wider paddle
