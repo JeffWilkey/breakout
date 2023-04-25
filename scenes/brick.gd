@@ -19,7 +19,7 @@ func create(pos = Vector2(0, 0), size = Vector2(64, 16), padding = 4.0, color = 
 	$BrickInner.color = Color.from_string(color, Color.BLUE)
 
 func _on_area_2d_body_exited(body):
-	# When Ball collides with Brick subtract health based on Ball's damage property
+	# when ball collides with brick subtract health based on 
 	if body is Ball:
 		health -= body.get("damage")
 		if health <= 0:

@@ -1,20 +1,16 @@
-[gd_scene load_steps=7 format=3 uid="uid://dw7d7fri7jd6"]
+[gd_scene load_steps=6 format=3 uid="uid://dw7d7fri7jd6"]
 
 [ext_resource type="Script" path="res://Main.gd" id="1_ahv5u"]
 [ext_resource type="PackedScene" uid="uid://dq5wkdh5n4lo2" path="res://scenes/brick.tscn" id="2_t53wk"]
-[ext_resource type="PackedScene" path="res://scenes/ball.tscn" id="3_q85ls"]
-[ext_resource type="PackedScene" uid="uid://riql8xbb7yep" path="res://scenes/paddle.tscn" id="4_qu8jk"]
 [ext_resource type="PackedScene" uid="uid://df06n8ojjfjol" path="res://scenes/level_manager.tscn" id="5_5i2x2"]
 [ext_resource type="PackedScene" uid="uid://b8dsnfibmnpwv" path="res://scenes/wall.tscn" id="6_u6hve"]
+[ext_resource type="PackedScene" uid="uid://inytaed4xix2" path="res://game_manager.tscn" id="7_awake"]
 
 [node name="Main" type="Node"]
 script = ExtResource("1_ahv5u")
-brick_scene = ExtResource("2_t53wk")
-ball_scene = ExtResource("3_q85ls")
-paddle_scene = ExtResource("4_qu8jk")
 
 [node name="LevelManager" parent="." instance=ExtResource("5_5i2x2")]
 wall_scene = ExtResource("6_u6hve")
 brick_scene = ExtResource("2_t53wk")
 
-[node name="GameManager" type="Node2D" parent="."]
+[node name="GameManager" parent="." instance=ExtResource("7_awake")]

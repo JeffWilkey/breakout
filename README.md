@@ -14,8 +14,9 @@
 	- [x] Add a level manager
 	- [ ] Allow for multiple level configurations
 - [ ] Game Manager
-	- [ ] Handle Placement of Paddle and Ball
+	- [x] Handle Placement of Paddle and Ball
 	- [ ] Handle points, manage power ups
+	- [ ] Handle lives
 - [x] Ball
 	- [x] Add damage variable to ball
 - [x] Walls
@@ -45,7 +46,7 @@
 	- [ ] Add point multiplier when bricks are destroyed quickly (using a timer probably)
 	- [ ] Track score in UI
 - [ ] Lives
-	- [ ] Add lives to player
+	- [ ] Add lives to game manager
 	- [ ] Track lives in UI
 - [ ] Add a GUI
 - [ ] 5 Levels
