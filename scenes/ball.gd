@@ -3,7 +3,7 @@ extends RigidBody2D
 class_name Ball
 
 @export var damage = 10
-var speed = 350
+var speed = 450
 var direction = Vector2(0, 1)
 
 	

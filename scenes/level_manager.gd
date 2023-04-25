@@ -2,19 +2,14 @@ extends Node2D
 
 @export var wall_scene: PackedScene
 @export var brick_scene: PackedScene
-@export var brick_rows = [
-	"#8ef6e4",
-	"#9896f1",
-	"#d59bf6",
-	"#edb1f1"
-]
+@export var row_count: int
 
 var screen_size;
 
 func _ready():
 	screen_size = get_viewport_rect().size
 	_init_walls()
-	_place_bricks()
+	_place_bricks(level_1())
 
 # Add walls around play area
 func _init_walls():
@@ -30,12 +25,54 @@ func _init_walls():
 	add_child(wall_right)
 	add_child(wall_top)
 
-func _place_bricks():
-	for n in brick_rows.size():
-		for i in 10:
-			var brick = brick_scene.instantiate()
-			var brick_size = Vector2(48, 10)
-			var brick_spawn_location = Vector2(i * brick_size.x, n * brick_size.y)
-			brick.call("create", brick_spawn_location, brick_size, 2.0, brick_rows[n])
-			brick.visible = true
-			add_child(brick)
+func _place_bricks(level):
+	row_count = level.size()
+	for row in row_count:
+		for col in level[row].size():
+			if (level[row][col] != null):
+				var brick = brick_scene.instantiate()
+				var brick_size = Vector2(48, 10)
+				var brick_spawn_location = Vector2(col * brick_size.x, row * brick_size.y)
+				
+				brick.call("create", brick_spawn_location, brick_size, 2.0, level[row][col].color, level[row][col].hp)
+				brick.visible = true
+				add_child(brick)
+
+func _full_row(brick, cols: int):
+	var row = []
+	for n in cols:
+		row.push_back({ "color": brick.color, "hp": brick.hp })
+	
+	return row
+
+## Levels
+# Each level is an array and each row in the level is another array of dictionaries
+# Each dictionary translates to a brick w/ a `color` and `hp` property
+# `color` expects a hexcode
+# `hp` expects a health amount
+
+func level_1():
+	var blue = { "color": "#22559c", "hp": 10 }
+	var blue_light = { "color": "#626fe6", "hp": 10 }
+	var red = { "color": "#f27370", "hp": 10 }
+	var orange = { "color": "#fa9856", "hp": 10 }
+	var yellow = { "color": "#ede862", "hp": 10 }
+	var green = { "color": "#5be7a9", "hp": 10 }
+	var charcoal = { "color": "#392f2f", "hp": 10 }
+	var forest = { "color": "#3a7563", "hp": 10 }
+	var forest_light = { "color": "#59a985", "hp": 10}
+	
+	return [
+		_full_row(blue, 10),
+		_full_row(blue_light, 10),
+		_full_row(red, 10),
+		[orange, null, orange, null,orange, orange, null, orange, null, orange],
+		[yellow, yellow, yellow,null, yellow, yellow, null, yellow, yellow, yellow],
+		[null],
+		[null],
+		[null],
+		[null],
+		[charcoal, null, charcoal, charcoal, charcoal, charcoal, charcoal, charcoal, null, charcoal],
+		[forest, null, forest, forest, forest, forest, forest, forest, null, forest],
+		[forest_light, null, forest_light, forest_light, forest_light, forest_light, forest_light, forest_light, null, forest_light]
+	]

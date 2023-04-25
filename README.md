@@ -10,9 +10,9 @@
 ## Todo
 - [x] Improve ball/paddle physics
 - [x] Organize filesystem
-- [ ] Level Manager
+- [x] Level Manager
 	- [x] Add a level manager
-	- [ ] Allow for multiple level configurations
+	- [x] Allow for multiple level configurations
 - [ ] Game Manager
 	- [x] Handle Placement of Paddle and Ball
 	- [ ] Handle points, manage power ups
@@ -22,36 +22,28 @@
 - [x] Walls
 	- [x] Use one wall scene for all walls
 	- [x] Instantiate walls from level manager
-- [ ] Bricks
+- [x] Bricks
 	- [x] Allow for dynamic brick size and padding
-	- [ ] Add dynamic brick lay. Add variable for amount of bricks then divide viewport width by amount and set brick width to equal that amount.
-	- [ ] Add code for dynamic brick placement using a matrix `[[x, null, x, x, x, x, null, x]]` would give you a row of bricks where `null` === a gap and x is a placed brick. Then use dynamic brick lay code based on size of array rather than hardcoded value. Also consider making `x` an object that allows specifying `color`, `brick_type`, `brick_health`
-	- [ ] Make bricks look cooler
-		- [x] Regular Bricks
-		- [ ] Glass Bricks
-		- [ ] Indestructable Bricks
+	- [x] Add dynamic brick lay.
+	- [x] Add code for dynamic brick placement using a matrix `[[x, null, x, x, x, x, null, x]]` would give you a row of bricks where `null` === a gap and x is a placed brick. Then use dynamic brick lay code based on size of array rather than hardcoded value. Also consider making `x` an object that allows specifying `color`, `brick_type`, `brick_health`
+	- [x] Make bricks look cooler
 	- [x] Add health to bricks
 	- [x] Subtract health from bricks when colliding w/ ball based on ball `damage` property
 	- [x] Instantiate bricks from level manager
-- [ ] Accumulate ball speed as time passes for both paddle and ball
 - [ ] Add power-ups
 	- [ ] 2x Speed w/ Wider paddle
 	- [ ] Invinciball where ball passes through bricks and destroys them rather than colliding
 	- [ ] Mega ball -- make the ball really big
-	- [ ] Nuke -- w/ animation
-	- [ ] Bonus: Fireball -- ignite the ball and every brick it touches will ignite as well, spreading fire to other bricks
+	- [ ] Nuke 
 	- [ ] Make bricks spawn power ups randomly or add power up bricks
 - [ ] Points
 	- [ ] Add points based on accumulated speed
 	- [ ] Add point multiplier when bricks are destroyed quickly (using a timer probably)
-	- [ ] Track score in UI
+	- [ ] Track score in GUI
 - [ ] Lives
 	- [ ] Add lives to game manager
-	- [ ] Track lives in UI
+	- [ ] Track lives in GUI
 - [ ] Add a GUI
-- [ ] 5 Levels
-	- [ ] Level 1
-	- [ ] Level 2
-	- [ ] Level 3
-	- [ ] Level 4
-	- [ ] Level 5
+
+	
+

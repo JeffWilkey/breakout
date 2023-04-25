@@ -9,8 +9,9 @@ func update_color(color):
 	$BrickOuter.color = Color.from_string(color, Color.RED).darkened(0.2)
 	$BrickInner.color = Color.from_string(color, Color.BLUE)
 	
-func create(pos = Vector2(0, 0), size = Vector2(64, 16), padding = 4.0, color = "#00ff00"):
+func create(pos = Vector2(0, 0), size = Vector2(64, 16), padding = 4.0, color = "#00ff00", hp = 10):
 	position = pos
+	health = hp
 	
 	$BrickOuter.size = size
 	$BrickInner.size = Vector2(size.x - padding * 2, size.y - padding * 2)
