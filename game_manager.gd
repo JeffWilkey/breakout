@@ -2,14 +2,21 @@ extends Node2D
 
 @export var ball_scene: PackedScene
 @export var paddle_scene: PackedScene
+@export var lives = 3
 
 var _ball
 var _ball_start_pos
 var _paddle
 
+var _game_over = false
+
 func _process(_delta):
 	if (_ball && _ball.position.y > get_viewport().size.y):
-		_ball.call("reset_ball", _ball_start_pos)
+		lives -= 1
+		if (lives > 0):
+			_ball.call("reset_ball", _ball_start_pos)
+		else:
+			_game_over = true;
 
 func new_game(ball_start_pos: Vector2):
 	_ball_start_pos = ball_start_pos

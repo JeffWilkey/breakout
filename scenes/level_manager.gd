@@ -74,5 +74,6 @@ func level_1():
 		[null],
 		[charcoal, null, charcoal, charcoal, charcoal, charcoal, charcoal, charcoal, null, charcoal],
 		[forest, null, forest, forest, forest, forest, forest, forest, null, forest],
-		[forest_light, null, forest_light, forest_light, forest_light, forest_light, forest_light, forest_light, null, forest_light]
+		[forest_light, null, forest_light, forest_light, forest_light, forest_light, forest_light, forest_light, null, forest_light],
+		_full_row(green, 10)
 	]

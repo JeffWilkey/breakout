@@ -16,7 +16,7 @@
 - [ ] Game Manager
 	- [x] Handle Placement of Paddle and Ball
 	- [ ] Handle points, manage power ups
-	- [ ] Handle lives
+	- [x] Handle lives
 - [x] Ball
 	- [x] Add damage variable to ball
 - [x] Walls
@@ -41,9 +41,13 @@
 	- [ ] Add point multiplier when bricks are destroyed quickly (using a timer probably)
 	- [ ] Track score in GUI
 - [ ] Lives
-	- [ ] Add lives to game manager
+	- [x] Add lives to game manager
 	- [ ] Track lives in GUI
 - [ ] Add a GUI
+- [ ] Game over
+	- [x] Add game over variable to game manager
+	- [x] The game is over when lives are <= 0
+	- [ ] Add Game Over to the GUI
 
 	
 

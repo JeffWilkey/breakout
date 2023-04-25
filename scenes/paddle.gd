@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-@export var speed = 400
+@export var speed = 600
 var screen_size
 
 # Change this to CharacterBody or Rigidbody to be able to accurately keep track of velocity;

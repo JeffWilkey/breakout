@@ -6,6 +6,7 @@
 size = Vector2(54, 8)
 
 [node name="Paddle" type="CharacterBody2D"]
+scale = Vector2(1.5, 1)
 script = ExtResource("1_h1dho")
 
 [node name="ColorRect" type="ColorRect" parent="."]
