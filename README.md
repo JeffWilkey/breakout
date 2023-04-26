@@ -13,9 +13,8 @@
 - [x] Level Manager
 	- [x] Add a level manager
 	- [x] Allow for multiple level configurations
-- [ ] Game Manager
+- [x] Game Manager
 	- [x] Handle Placement of Paddle and Ball
-	- [ ] Handle points, manage power ups
 	- [x] Handle lives
 - [x] Ball
 	- [x] Add damage variable to ball
@@ -30,24 +29,16 @@
 	- [x] Add health to bricks
 	- [x] Subtract health from bricks when colliding w/ ball based on ball `damage` property
 	- [x] Instantiate bricks from level manager
-- [ ] Add power-ups
-	- [ ] 2x Speed w/ Wider paddle
-	- [ ] Invinciball where ball passes through bricks and destroys them rather than colliding
-	- [ ] Mega ball -- make the ball really big
-	- [ ] Nuke 
-	- [ ] Make bricks spawn power ups randomly or add power up bricks
-- [ ] Points
-	- [ ] Add points based on accumulated speed
-	- [ ] Add point multiplier when bricks are destroyed quickly (using a timer probably)
-	- [ ] Track score in GUI
-- [ ] Lives
+- [x] Lives
 	- [x] Add lives to game manager
-	- [ ] Track lives in GUI
-- [ ] Add a GUI
-- [ ] Game over
+	- [x] Track lives in GUI
+- [x] Add a GUI
+- [x] Game over
 	- [x] Add game over variable to game manager
 	- [x] The game is over when lives are <= 0
-	- [ ] Add Game Over to the GUI
-
-	
+	- [x] Add Game Over to the GUI
+- [ ] Bugs
+	- [ ] Ball acceleration
+	- [ ] Some weird collsion bugs between ball and paddle
+	- [ ] Ball vector can be too close to perpendicular with paddle
 

@@ -6,10 +6,19 @@ extends Node2D
 
 var screen_size;
 
-func _ready():
-	screen_size = get_viewport_rect().size
+func new_game():
+	for n in get_children():
+		if n is Brick:
+			remove_child(n)
+			n.queue_free()
+	
 	_init_walls()
 	_place_bricks(level_1())
+
+func _ready():
+	screen_size = get_viewport_rect().size
+	
+	new_game()
 
 # Add walls around play area
 func _init_walls():
@@ -44,6 +53,7 @@ func _full_row(brick, cols: int):
 		row.push_back({ "color": brick.color, "hp": brick.hp })
 	
 	return row
+	
 
 ## Levels
 # Each level is an array and each row in the level is another array of dictionaries

@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://dw7d7fri7jd6"]
+[gd_scene load_steps=7 format=3 uid="uid://dw7d7fri7jd6"]
 
 [ext_resource type="Script" path="res://Main.gd" id="1_ahv5u"]
 [ext_resource type="PackedScene" uid="uid://dq5wkdh5n4lo2" path="res://scenes/brick.tscn" id="2_t53wk"]
 [ext_resource type="PackedScene" uid="uid://df06n8ojjfjol" path="res://scenes/level_manager.tscn" id="5_5i2x2"]
+[ext_resource type="PackedScene" uid="uid://b6s07130hq8n8" path="res://scenes/hud.tscn" id="6_l5lm2"]
 [ext_resource type="PackedScene" uid="uid://b8dsnfibmnpwv" path="res://scenes/wall.tscn" id="6_u6hve"]
 [ext_resource type="PackedScene" uid="uid://inytaed4xix2" path="res://game_manager.tscn" id="7_awake"]
 
@@ -14,3 +15,11 @@ wall_scene = ExtResource("6_u6hve")
 brick_scene = ExtResource("2_t53wk")
 
 [node name="GameManager" parent="." instance=ExtResource("7_awake")]
+
+[node name="HUD" parent="." instance=ExtResource("6_l5lm2")]
+
+[node name="StartTimer" type="Timer" parent="."]
+
+[connection signal="game_over" from="GameManager" to="." method="_on_game_manager_game_over"]
+[connection signal="lose_life" from="GameManager" to="." method="_on_game_manager_lose_life"]
+[connection signal="start_game" from="HUD" to="." method="_on_hud_start_game"]

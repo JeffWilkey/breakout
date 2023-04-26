@@ -1,5 +1,7 @@
 extends StaticBody2D
 
+class_name Brick
+
 @export var health = 10
 
 func break_brick():

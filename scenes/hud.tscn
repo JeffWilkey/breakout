@@ -1,0 +1,37 @@
+[gd_scene load_steps=2 format=3 uid="uid://b6s07130hq8n8"]
+
+[ext_resource type="Script" path="res://scenes/HUD.gd" id="1_pthvb"]
+
+[node name="HUD" type="CanvasLayer"]
+script = ExtResource("1_pthvb")
+
+[node name="StartButton" type="Button" parent="."]
+offset_left = 205.0
+offset_top = 544.0
+offset_right = 286.0
+offset_bottom = 575.0
+text = "START"
+
+[node name="Message" type="Label" parent="."]
+offset_left = 164.0
+offset_top = 207.0
+offset_right = 341.0
+offset_bottom = 269.0
+theme_override_font_sizes/font_size = 20
+text = "Breakout Example
+Godot 4"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MessageTimer" type="Timer" parent="."]
+
+[node name="Lives" type="Label" parent="."]
+visible = false
+offset_left = 18.0
+offset_top = 683.0
+offset_right = 58.0
+offset_bottom = 706.0
+text = "Lives: 3"
+
+[connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="timeout" from="MessageTimer" to="." method="_on_message_timer_timeout"]
